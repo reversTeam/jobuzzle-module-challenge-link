@@ -1,0 +1,51 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:01:04
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:24:16
+**************************************************************/
+
+class ChallengeLinkDataMainEntity extends LinkDataMainEntity {
+
+	public _type = 'ChallengeLink';
+	public _templateTimeline = 'challengelink_data_timeline_template';
+	public _templateMiniature = 'challengelink_data_miniature_template';
+
+	initialize : function () {
+		_super();
+
+		this['_score'] = undefined;
+	}
+
+	hydrate : function (datas) {
+		_super(datas);
+
+		if (datas['score'])
+			this.setScore(datas['score']);
+	}
+
+	search : function (params) {
+		var reg = new RegExp(params, 'i');
+
+		return (
+			_super()
+			|| (this.getScore() != undefined && reg.test(this.getScore()))
+		);
+	}
+
+	public getScore : function () {
+		return this['_score'];
+	}
+
+	public setScore : function (score) {
+		this['_score'] = score;
+
+		return this;
+	}
+
+}

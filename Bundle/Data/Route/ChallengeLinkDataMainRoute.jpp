@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:05:50
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:02:49
+**************************************************************/
+
+class ChallengeLinkDataMainRoute extends LinkDataMainRoute {
+
+	name = 'challengelink';
+
+	baseName = 'Challengelink';
+	baseRoute = '{challengelinks}';
+	baseController = 'challengelink_data_main_controller';
+
+	paramName = 'challengelink_id';
+
+}

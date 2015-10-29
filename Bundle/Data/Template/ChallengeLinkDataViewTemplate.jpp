@@ -1,0 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:08:51
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:02:45
+**************************************************************/
+
+class ChallengeLinkDataViewTemplate extends LinkDataViewTemplate {
+
+	public _serviceName = 'challengelink_data_main_service';
+	public _viewClassName = 'ChallengeLinkDataTemplateViewView';
+	public _type = 'ChallengeLink';
+	public _route = 'challengelink';
+
+}

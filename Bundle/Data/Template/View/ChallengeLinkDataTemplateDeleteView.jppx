@@ -1,0 +1,22 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:12:19
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:02:44
+**************************************************************/
+
+class ChallengeLinkDataTemplateDeleteView extends LinkDataTemplateDeleteView {
+
+	public _class = 'challengelink';
+	public _elementType = 'ChallengeLink';
+
+	public display : function () {
+		return <div>Delete Challenge Link</div>;
+	}
+
+}

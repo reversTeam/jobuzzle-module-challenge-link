@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:12:41
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:26:27
+**************************************************************/
+
+class ChallengeLinkDataTemplateTimelineView extends LinkDataTemplateTimelineView {
+
+	public display : function () {
+		var entity = this.state['entity'];
+
+		return <div className="challengelink timeline view" data-url={this.getUrl()} onClick={this.link}>
+			{entity.getTarget().getName() +' : '+ entity.getScore() }
+		</div>;
+	}
+
+}

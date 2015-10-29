@@ -1,0 +1,68 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-28 16:27:32
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 16:30:52
+**************************************************************/
+
+class ChallengeLinkDataHelperDisplayView extends MasterHelperView {
+
+	initialState : function () {
+		var states = {};
+
+		states['entities'] = this.getFilters();
+
+		return states;
+	}
+
+	getFilters = function () {
+		this._template.setReady(false);
+		var self = this;
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+		var router = serviceLocator.get('Router');
+		var collection = store.getAll('ChallengeLink');
+		var entity = this._template.getEntity();
+
+		var entities = collection.filterByParentEntityRoute(entity);
+
+		if (!Object.keys(entities).length) {
+			store.request(router.entityRouteForApi(entity, 'challengelink'), {}, function (datas) {
+				self._template.setReady(true);
+				entities = collection.filterByParentEntityRoute(entity);
+				self.setState({ entities : entities });
+			});
+		} else {
+			this._template.setReady(true);
+		}
+
+		return entities;
+	}
+
+	displayChallengeLinks : function (challengeLinks) {
+		var result = [];
+		var limit = this._template.getLimit();
+		var n = 0;
+
+		for (var i in challengeLinks) {
+			var challengeLink = challengeLinks[i];
+			if (!challengeLink.getTarget())
+				continue ;
+			result.push(challengeLink.displayTimeline());
+		}
+
+		return result;
+	}
+ 
+	display : function () {
+		var entities = this.state['entities'];
+
+		return <div className="challengeLinkContent">
+			{this.displayChallengeLinks(entities)}
+		</div>
+	}
+}

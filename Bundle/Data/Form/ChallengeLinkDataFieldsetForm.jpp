@@ -1,0 +1,39 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:03:28
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:24:30
+**************************************************************/
+
+class ChallengeLinkDataFieldsetForm extends LinkDataFieldsetForm {
+
+	public _formName = 'ChallengeLink';
+	public _createFormName = 'challengelink_data_create_form';
+	public _searchFormName = 'challengelink_data_search_form';
+	public _editFormName = 'challengelink_data_edit_form';
+
+	public _scoreDisplay = undefined;
+
+	public getElementsDisplay : function () {
+		var elementsDisplay = _super();
+
+		elementsDisplay['score'] = this.getScoreDisplay();
+
+		return elementsDisplay;
+	}
+
+	public getScoreDisplay : function () {
+		if (!this['_scoreDisplay']) {
+			this['_scoreDisplay'] = {};
+			this['_scoreDisplay']['type'] = 'Text';
+			this['_scoreDisplay']['label'] = 'form.input.challengelink.score';
+		}
+		return this['_scoreDisplay'];
+	}
+
+}

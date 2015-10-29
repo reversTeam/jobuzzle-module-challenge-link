@@ -1,0 +1,33 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-09-30 13:06:29
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:02:48
+**************************************************************/
+
+class ChallengeLinkDataMainService extends LinkDataMainService {
+
+	_type = 'challengelink';
+	_title = 'ChallengeLinks';
+	_entityType = 'ChallengeLink';
+	_fieldsetName = 'challengelink_data_fieldset_form';
+
+	getTitleParamsView : function (entity) {
+		if (entity)
+			return { url : entity.getId() };
+		return { url : '' };
+	}
+
+	public getElementEntity : function (id) {
+		var router = serviceLocator.get('Router');
+		var store = serviceLocator.get('ServiceManager').get('store_manager_main_service');
+
+		store.request(router.build('/challengelink/view', { 'challengelink_id' : id }));
+	}
+
+}

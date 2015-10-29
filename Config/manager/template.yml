@@ -1,0 +1,27 @@
+###############################################################
+#     ####         #                               #          # Jobuzzle - Copyright All rights reserved
+#     ####         #                               #          #
+#       ##  #####  ######  #     # ####### ####### #  #####   # @Author: revers
+#       ## #     # #     # #     #      #       #  # #     #  #
+#       ## #     # #     # #     #     #       #   # #     #  # @Date:   2015-09-30 12:53:28
+#       ## #     # #     # #     #    #       #    # #     #  #
+#       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
+#  ####### #     # #     # #     #  #       #      # #        #
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-28 15:02:38
+###############################################################
+
+invokables:
+	challengelink_data_timeline_template	: Data/Template/ChallengeLinkDataTimelineTemplate
+
+	challengelink_data_search_template		: Data/Template/ChallengeLinkDataSearchTemplate
+	challengelink_data_view_template		: Data/Template/ChallengeLinkDataViewTemplate
+	challengelink_data_create_template		: Data/Template/ChallengeLinkDataCreateTemplate
+	challengelink_data_update_template		: Data/Template/ChallengeLinkDataUpdateTemplate
+	challengelink_data_delete_template		: Data/Template/ChallengeLinkDataDeleteTemplate
+
+shared:
+	challengelink_data_search_template		: true
+	challengelink_data_view_template		: true
+	challengelink_data_create_template		: true
+	challengelink_data_update_template		: true
+	challengelink_data_delete_template		: true

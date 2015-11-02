@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 15:24:16
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-02 13:48:55
 **************************************************************/
 
 class ChallengeLinkDataMainEntity extends LinkDataMainEntity {
@@ -25,7 +25,7 @@ class ChallengeLinkDataMainEntity extends LinkDataMainEntity {
 	hydrate : function (datas) {
 		_super(datas);
 
-		if (datas['score'])
+		if (datas['score'] != undefined)
 			this.setScore(datas['score']);
 	}
 

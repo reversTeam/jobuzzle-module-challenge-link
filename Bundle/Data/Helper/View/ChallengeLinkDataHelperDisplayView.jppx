@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-28 16:30:52
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-11 10:45:25
 **************************************************************/
 
 class ChallengeLinkDataHelperDisplayView extends MasterHelperView {
@@ -52,7 +52,7 @@ class ChallengeLinkDataHelperDisplayView extends MasterHelperView {
 			var challengeLink = challengeLinks[i];
 			if (!challengeLink.getTarget())
 				continue ;
-			result.push(challengeLink.displayTimeline());
+			result.push(<div key={i}>{challengeLink.displayTimeline()}</div>);
 		}
 
 		return result;

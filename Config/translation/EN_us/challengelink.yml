@@ -7,9 +7,11 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-28 15:27:46
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-09 14:11:23
 ###############################################################
 
-ChallengeLinks: Challenge Link
-view: '{{url}}'
-update: '{{url}}'
+page:
+	title:
+		ChallengeLinks: Challenge Link
+		view: '{{url}}'
+		update: '{{url}}'
